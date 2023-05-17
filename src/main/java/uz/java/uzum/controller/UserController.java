@@ -1,22 +1,26 @@
 package uz.java.uzum.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import uz.java.uzum.dto.ResponseDto;
 import uz.java.uzum.dto.UserDto;
+import uz.java.uzum.service.UserService;
 
 
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
+    private final UserService userService;
 
     @PostMapping()
     public ResponseDto<UserDto> addUser(@RequestBody UserDto usersDto){
-        return null;
+        return userService.addUser(usersDto);
+    }
+
+    @PatchMapping
+    public ResponseDto<UserDto> updateUser(@RequestBody UserDto userDto){
+        return userService.updateUser(userDto);
     }
 
 

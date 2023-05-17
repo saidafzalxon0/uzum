@@ -1,4 +1,4 @@
 package uz.java.uzum.controller;
 
-public class UsersController {
+public class UserController {
 }

@@ -23,5 +23,10 @@ public class UserController {
         return userService.updateUser(userDto);
     }
 
+    @GetMapping("/{id}")
+    public ResponseDto<UserDto> getUserById(@PathVariable Integer id){
+        return userService.getById(id);
+    }
+
 
 }

@@ -99,6 +99,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseDto<UserDto> getById(Integer id) {
-        return null;
+        return usersRepository.findById(id)
+                .map(u -> ResponseDto.<UserDto>builder()
+                        .success(true)
+                        .message("OK")
+                        .data(usersMapper.toDto(u))
+                        .build()
+                ).orElse(ResponseDto.<UserDto>builder()
+                        .message("Not found")
+                        .code(-1)
+                        .build());
+
     }
 }

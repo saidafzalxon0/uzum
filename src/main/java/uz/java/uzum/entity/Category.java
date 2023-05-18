@@ -15,8 +15,8 @@ public class Category {
     @Id
     @GeneratedValue(generator = "categoryIdSeq")
     @SequenceGenerator(name = "categoryIdSeq", sequenceName = "category_id_seq", allocationSize = 1)
-    Integer id;
-    String name;
+    private Integer id;
+    private String name;
     @ManyToOne
-    Category parentId;
+    private Category parentId;
 }

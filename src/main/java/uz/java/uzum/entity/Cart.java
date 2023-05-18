@@ -21,17 +21,11 @@ public class Cart {
     @Id
     @GeneratedValue(generator = "id",strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "total_price")
     private Integer totalPrice;
     @ManyToMany
-    @JoinTable(
-            name = "cart_product",
-            joinColumns = @JoinColumn(name = "cart_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
+
     private List<Product> products;
     @OneToOne
-    @JoinColumn(name = "user_id")
     private User user;
     @CreationTimestamp
     @CreatedDate

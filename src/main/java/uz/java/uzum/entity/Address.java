@@ -22,9 +22,6 @@ public class Address {
     private String code;
     private String phoneNumber;
     @ManyToMany
-    @JoinTable(
-            name = "user_address",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "address_id"))
+
     private List<User> users;
 }

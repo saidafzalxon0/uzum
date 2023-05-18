@@ -21,7 +21,7 @@ public class OrderDetail {
     private User user;
     private Double total;
 //    @OneToOne
-//    private PaymentDetails paymentDetails;
+//    private PaymentDetail paymentDetail;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 }

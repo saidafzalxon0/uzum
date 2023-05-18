@@ -17,5 +17,6 @@ public class Category {
     @SequenceGenerator(name = "categoryIdSeq", sequenceName = "category_id_seq", allocationSize = 1)
     Integer id;
     String name;
-    Integer parentId;
+    @ManyToOne
+    Category parentId;
 }

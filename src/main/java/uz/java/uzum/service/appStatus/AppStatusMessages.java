@@ -1,4 +1,4 @@
-package uz.java.uzum.service.AppStatus;
+package uz.java.uzum.service.appStatus;
 
 public class AppStatusMessages {
     public static final String NULL_VALUE = "Value is null";

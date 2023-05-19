@@ -20,8 +20,8 @@ public class OrderDetail {
     @ManyToOne
     private User user;
     private Double total;
-//    @OneToOne
-//    private PaymentDetail paymentDetail;
+    @OneToOne
+    private PaymentDetail paymentDetail;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 }

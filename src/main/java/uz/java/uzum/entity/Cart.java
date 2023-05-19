@@ -21,7 +21,6 @@ public class Cart {
     @Id
     @GeneratedValue(generator = "id",strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer totalPrice;
     @ManyToMany
 
     private List<Product> products;

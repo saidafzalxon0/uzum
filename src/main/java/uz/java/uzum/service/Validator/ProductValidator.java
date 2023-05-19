@@ -8,7 +8,7 @@ import uz.java.uzum.dto.ProductDto;
 import java.util.ArrayList;
 import java.util.List;
 
-import static uz.java.uzum.service.AppStatus.AppStatusMessages.*;
+import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Component
 public class ProductValidator {

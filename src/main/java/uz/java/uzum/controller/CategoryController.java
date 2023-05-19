@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uz.java.uzum.dto.CategoryDto;
 import uz.java.uzum.dto.ResponseDto;
-import uz.java.uzum.service.Impl.CategoryServiceImpl;
+import uz.java.uzum.service.impl.CategoryServiceImpl;
 
 @RestController
 @RequestMapping("/category")

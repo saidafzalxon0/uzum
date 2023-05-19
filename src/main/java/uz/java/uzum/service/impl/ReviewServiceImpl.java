@@ -1,17 +1,12 @@
-package uz.java.uzum.service.Impl;
+package uz.java.uzum.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import uz.java.uzum.dto.CategoryDto;
 import uz.java.uzum.dto.ResponseDto;
 import uz.java.uzum.dto.ReviewDto;
-import uz.java.uzum.repository.CategoryRepository;
 import uz.java.uzum.repository.ReviewRepository;
 import uz.java.uzum.service.ReviewService;
-import uz.java.uzum.service.mapper.CategoryMapper;
 import uz.java.uzum.service.mapper.ReviewMapper;
-
-import java.time.LocalDateTime;
 
 import static uz.java.uzum.service.AppStatus.AppStatusCodes.DATABASE_ERROR_CODE;
 import static uz.java.uzum.service.AppStatus.AppStatusMessages.DATABASE_ERROR;

@@ -1,6 +1,5 @@
-package uz.java.uzum.service.Impl;
+package uz.java.uzum.service.impl;
 
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

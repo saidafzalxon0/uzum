@@ -1,10 +1,9 @@
-package uz.java.uzum.service.Impl;
+package uz.java.uzum.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import uz.java.uzum.dto.CategoryDto;
 import uz.java.uzum.dto.ResponseDto;
-import uz.java.uzum.entity.Category;
 import uz.java.uzum.repository.CategoryRepository;
 import uz.java.uzum.service.CategoryService;
 import uz.java.uzum.service.mapper.CategoryMapper;

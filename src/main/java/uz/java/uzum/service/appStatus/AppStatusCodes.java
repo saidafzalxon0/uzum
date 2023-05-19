@@ -1,4 +1,4 @@
-package uz.java.uzum.service.AppStatus;
+package uz.java.uzum.service.appStatus;
 
 public class AppStatusCodes {
     public static final Integer VALIDATION_ERROR_CODE = -2;

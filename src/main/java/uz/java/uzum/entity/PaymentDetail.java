@@ -1,9 +1,6 @@
 package uz.java.uzum.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class PaymentDetail {
     @Id
-    @GeneratedValue(generator = "paymentIdSeq")
-    @SequenceGenerator(name = "paymentIdSeq")
+    @GeneratedValue(generator = "id",strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer orderId;
     private Integer amount;

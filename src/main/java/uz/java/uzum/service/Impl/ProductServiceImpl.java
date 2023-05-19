@@ -12,7 +12,6 @@ import uz.java.uzum.dto.ResponseDto;
 import uz.java.uzum.entity.Product;
 import uz.java.uzum.repository.ProductRepository;
 import uz.java.uzum.service.ProductService;
-import uz.java.uzum.service.Validator.ProductValidator;
 import uz.java.uzum.service.mapper.ProductMapper;
 
 import java.util.List;
@@ -26,20 +25,19 @@ import static uz.java.uzum.service.AppStatus.AppStatusMessages.*;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
-    private final ProductValidator productValidator;
     @Override
     public ResponseDto<ProductDto> addProduct(ProductDto productDto) {
-        List<ErrorDto> errors = productValidator.validateProduct(productDto);
+//        List<ErrorDto> errors = productValidator.validateProduct(productDto);
 
-        if (!errors.isEmpty()){
-            return ResponseDto.<ProductDto>builder()
-                    .errors(errors)
-                    .data(productDto)
-                    .message(VALIDATION_ERROR)
-                    .code(VALIDATION_ERROR_CODE)
-                    .success(false)
-                    .build();
-        }
+//        if (!errors.isEmpty()){
+//            return ResponseDto.<ProductDto>builder()
+//                    .errors(errors)
+//                    .data(productDto)
+//                    .message(VALIDATION_ERROR)
+//                    .code(VALIDATION_ERROR_CODE)
+//                    .success(false)
+//                    .build();
+//        }
 
         Product product = productMapper.toEntity(productDto);
 

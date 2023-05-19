@@ -4,7 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import uz.java.uzum.dto.DeliveryDto;
 import uz.java.uzum.dto.ResponseDto;
-import uz.java.uzum.service.Impl.DeliveryServiceImpl;
+import uz.java.uzum.service.DeliveryService;
+import uz.java.uzum.service.impl.DeliveryServiceImpl;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @RequestMapping("/delivery")
 @RequiredArgsConstructor
 public class DeliveryController {
-    private final DeliveryServiceImpl deliveryService;
+    private final DeliveryService deliveryService;
 
     @GetMapping
     public ResponseDto<List<DeliveryDto>> getAll(){

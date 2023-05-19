@@ -13,6 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity(name = "delivery")
 public class Delivery {
     @Id
     @GeneratedValue(generator = "deliveryIdSeq")
@@ -23,6 +24,6 @@ public class Delivery {
     @ManyToOne
     private Address address;
     @OneToOne
-    private Order order;
+    private OrderItem orderItem;
     private Boolean isActive;
 }

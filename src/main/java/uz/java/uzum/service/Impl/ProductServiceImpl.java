@@ -18,8 +18,8 @@ import uz.java.uzum.service.mapper.ProductMapper;
 import java.util.List;
 import java.util.Optional;
 
-import static uz.java.uzum.service.AppStatus.AppStatusCodes.*;
-import static uz.java.uzum.service.AppStatus.AppStatusMessages.*;
+import static uz.java.uzum.service.appStatus.AppStatusCodes.*;
+import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Service
 @RequiredArgsConstructor

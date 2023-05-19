@@ -9,8 +9,8 @@ import uz.java.uzum.repository.CategoryRepository;
 import uz.java.uzum.service.CategoryService;
 import uz.java.uzum.service.mapper.CategoryMapper;
 
-import static uz.java.uzum.service.AppStatus.AppStatusCodes.*;
-import static uz.java.uzum.service.AppStatus.AppStatusMessages.*;
+import static uz.java.uzum.service.appStatus.AppStatusCodes.*;
+import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Service
 @RequiredArgsConstructor

@@ -8,13 +8,9 @@ import lombok.Setter;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import uz.java.uzum.service.AppStatus.AppStatusMessages;
 
-import static uz.java.uzum.service.AppStatus.AppStatusMessages.*;
+
+import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Getter
 @Setter

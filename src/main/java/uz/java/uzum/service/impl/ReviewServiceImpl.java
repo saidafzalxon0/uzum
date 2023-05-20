@@ -8,13 +8,13 @@ import uz.java.uzum.repository.ReviewRepository;
 import uz.java.uzum.service.ReviewService;
 import uz.java.uzum.service.mapper.ReviewMapper;
 
-import static uz.java.uzum.service.AppStatus.AppStatusCodes.DATABASE_ERROR_CODE;
-import static uz.java.uzum.service.AppStatus.AppStatusMessages.DATABASE_ERROR;
-import static uz.java.uzum.service.AppStatus.AppStatusMessages.OK;
+
+import static uz.java.uzum.service.appStatus.AppStatusCodes.*;
+import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Service
 @RequiredArgsConstructor
-public class ReviewServiceImpl implements ReviewService {
+public class  ReviewServiceImpl implements ReviewService {
     private final ReviewRepository reviewRepository;
     private final ReviewMapper reviewMapper;
     @Override

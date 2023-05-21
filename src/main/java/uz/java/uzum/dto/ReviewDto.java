@@ -16,7 +16,7 @@ import uz.java.uzum.entity.User;
 
 import java.util.Date;
 
-
+import static uz.java.uzum.service.appStatus.AppStatusMessages.EMPTY_STRING;
 import static uz.java.uzum.service.appStatus.AppStatusMessages.NEGATIVE_VALUE;
 
 @Getter

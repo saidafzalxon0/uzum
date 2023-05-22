@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,7 +22,9 @@ public class Product {
     private String description;
     private Double price;
     private Integer amount;
-//    @ManyToOne
-//    private Category category;
+    @ManyToMany
+    private List<Color> colors;
+    @ManyToOne
+    private Category category;
     private Boolean isAvailable;
 }

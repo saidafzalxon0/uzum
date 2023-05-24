@@ -13,7 +13,7 @@ import uz.java.uzum.service.impl.CategoryServiceImpl;
 @RestController
 @RequestMapping("/category")
 @RequiredArgsConstructor
-public class CategoryController {
+public class    CategoryController {
     private final CategoryServiceImpl categoryService;
 
     @PostMapping

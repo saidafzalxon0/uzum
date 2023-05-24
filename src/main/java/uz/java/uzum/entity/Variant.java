@@ -8,20 +8,18 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class Category {
+@NoArgsConstructor
+public class Variant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "name")
-    private String name;
-    @OneToMany
-    @JoinColumn(name = "parent_category_id")
-    private List<Category> parentId;
+    @Column(name = "variant_name")
+    private String variantName;
+    @OneToMany(mappedBy = "variant")
+    private List<VariantValue> variantValues;
 }
-

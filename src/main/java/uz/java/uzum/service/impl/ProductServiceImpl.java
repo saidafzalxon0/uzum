@@ -131,10 +131,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ResponseDto<ProductDto> getProductById(Integer id) {
-        String productName = productRepository.getReferenceById(id).getName();
-        productGetHistory.setProductName(productName);
-        productGetHistory.setUserId(id);
-        productGetRepository.save(productGetHistory);
+//        String productName = productRepository.getReferenceById(id).getName();
+//        productGetHistory.setProductName(productName);
+//        productGetHistory.setUserId(id);
+//        productGetRepository.save(productGetHistory);
 
         return productRepository.findById(id)
                 .map(products -> ResponseDto.<ProductDto>builder()

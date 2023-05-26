@@ -44,4 +44,7 @@ public class User {
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+    private String gender;
+    @Column(name = "birth_date")
+    private Date birthDate;
 }

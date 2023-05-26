@@ -66,8 +66,8 @@ public class UserServiceImpl implements UserService {
         if (usersDto.getBirthDate() != null) {
             user.setBirthDate(usersDto.getBirthDate());
         }
-        if (usersDto.getMiddleName() != null) {
-            user.setMiddleName(usersDto.getMiddleName());
+        if (usersDto.getUsername() != null) {
+            user.setUsername(usersDto.getUsername());
         }
         if (usersDto.getFirstName() != null) {
             user.setFirstName(usersDto.getFirstName());

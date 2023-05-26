@@ -16,14 +16,19 @@ import java.util.Date;
 @Entity
 public class Review {
     @Id
-    @GeneratedValue(generator = "reviewIdSeq")
-    @SequenceGenerator(name = "reviewIdSeq", sequenceName = "review_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "body")
     private String body;
+    @Column(name = "rank")
     private Integer rank;
     @ManyToOne
+    @Column(name = "user_id")
     private User userId;
     @OneToOne
+    @Column(name = "parent_id")
     private Review parentId;
+    @Column(name = "created_at")
     private Date createdAt;
 }

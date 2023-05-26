@@ -10,21 +10,29 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Product {
     @Id
-    @GeneratedValue(generator = "productIdSeq")
-    @SequenceGenerator(name = "productIdSeq", sequenceName = "product_id_seq", allocationSize = 1)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+    @Column(name = "name")
     private String name;
-    private String description;
-    private Double price;
+    @Column(name = "amount")
     private Integer amount;
-    @ManyToMany
-    private List<Color> colors;
+    @Column(name = "description")
+    private String description;
     @ManyToOne
+    @Column(name = "category_id")
     private Category category;
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
+    @OneToMany(mappedBy = "product")
+    @Column(name = "product_variant_id")
+    private List<ProductVariant> productVariant;
+    @Column(name = "isAvailable")
     private Boolean isAvailable;
 }

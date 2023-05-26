@@ -20,16 +20,20 @@ import java.util.List;
 public class Cart {
     @Id
     @GeneratedValue(generator = "id",strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
     @ManyToMany
-
+    @JoinTable(
+            name = "cart_product",
+            joinColumns = @JoinColumn(name = "cart_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
     private List<Product> products;
     @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
     @CreationTimestamp
     @CreatedDate
+    @Column(name = "createdAt")
     private LocalDateTime createdAt;
-
-
-
 }

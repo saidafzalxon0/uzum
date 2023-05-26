@@ -15,12 +15,20 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class PaymentDetail {
     @Id
-    @GeneratedValue(generator = "id",strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "order_id")
     private Integer orderId;
+    @Column(name = "amount")
     private Integer amount;
+    @Column(name = "provider")
     private String provider;
+    @Column(name = "status")
     private String status;
+    @Column(name = "create_at")
     private LocalDateTime createdAt;
+    @Column(name = "modified_at")
     private LocalDateTime modifiedAt;
 }
+

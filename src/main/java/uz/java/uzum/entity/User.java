@@ -32,7 +32,7 @@ public class User {
     @Column(name = "password")
     private String password;
     @Column(name = "isActive")
-    private Short isActive;
+    private Short isActive = 1;
     @Column(name = "enabled")
     private boolean enabled;
     @Column(name = "role",columnDefinition = "text default('USER')")

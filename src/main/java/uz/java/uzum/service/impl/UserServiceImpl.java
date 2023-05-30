@@ -9,9 +9,15 @@ import uz.java.uzum.entity.User;
 
 import uz.java.uzum.repository.UserRepository;
 import uz.java.uzum.service.UserService;
+import uz.java.uzum.service.appStatus.AppStatusMessages;
 import uz.java.uzum.service.mapper.UsersMapper;
 
 import java.util.Optional;
+
+import static uz.java.uzum.service.appStatus.AppStatusCodes.NOT_FOUND_ERROR_CODE;
+import static uz.java.uzum.service.appStatus.AppStatusCodes.OK_CODE;
+import static uz.java.uzum.service.appStatus.AppStatusMessages.NOT_FOUND;
+import static uz.java.uzum.service.appStatus.AppStatusMessages.OK;
 
 @Service
 @RequiredArgsConstructor
@@ -109,6 +115,35 @@ public class UserServiceImpl implements UserService {
                         .message("Not found")
                         .code(-1)
                         .build());
+
+    }
+
+    @Override
+    public ResponseDto<UserDto> delete(Integer id) {
+        Optional<User> userOptional = usersRepository.findByIdAndIsActive(id, (short)1);
+        if (userOptional.isEmpty()){
+            return ResponseDto.<UserDto>builder()
+                    .message(NOT_FOUND)
+                    .code(NOT_FOUND_ERROR_CODE)
+                    .build();
+        }
+        User user = userOptional.get();
+        user.setIsActive((short)0);
+        try {
+            usersRepository.save(user);
+            return ResponseDto.<UserDto>builder()
+                    .success(true)
+                    .message(OK)
+                    .data(usersMapper.toDto(user))
+                    .build();
+
+        }catch (Exception e){
+            return ResponseDto.<UserDto>builder()
+                    .success(false)
+                    .message(e.getMessage())
+                    .code(OK_CODE)
+                    .build();
+        }
 
     }
 }

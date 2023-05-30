@@ -28,5 +28,10 @@ public class UserController {
         return userService.getById(id);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseDto<UserDto> deleteUser(@PathVariable Integer id){
+        return userService.delete(id);
+    }
+
 
 }

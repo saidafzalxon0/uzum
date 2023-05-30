@@ -77,9 +77,9 @@ public class ProductServiceImpl implements ProductService {
         if (productDto.getName() != null) {
             product.setName(productDto.getName());
         }
-        if (productDto.getPrice() != null && productDto.getPrice() > 0) {
-            product.setPrice(productDto.getPrice());
-        }
+//        if (productDto.getPrice() != null && productDto.getPrice() > 0) {
+//            product.setPrice(productDto.getPrice());
+//        }
         if (productDto.getAmount() != null && productDto.getAmount() > 0) {
             product.setIsAvailable(true);
             product.setAmount(productDto.getAmount());
@@ -131,11 +131,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ResponseDto<ProductDto> getProductById(Integer id) {
-//        String productName = productRepository.getReferenceById(id).getName();
-//        productGetHistory.setProductName(productName);
-//        productGetHistory.setUserId(id);
-//        productGetRepository.save(productGetHistory);
-
         return productRepository.findById(id)
                 .map(products -> ResponseDto.<ProductDto>builder()
                         .data(productMapper.toDto(products))

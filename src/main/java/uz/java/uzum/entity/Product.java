@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -20,6 +21,8 @@ public class Product {
     private Integer id;
     @Column(name = "name")
     private String name;
+    private Integer price;
+    private Integer discount;
     @Column(name = "amount")
     private Integer amount;
     @Column(name = "description")
@@ -33,6 +36,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     @Column(name = "product_variant_id")
     private List<ProductVariant> productVariant;
+    private LocalDateTime date;
     @Column(name = "isAvailable")
     private Boolean isAvailable;
 }

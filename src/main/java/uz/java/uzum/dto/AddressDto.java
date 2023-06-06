@@ -4,16 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import uz.java.uzum.entity.Address;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeliveryDto {
+public class AddressDto {
     private Integer id;
-    private UserDto userDto;
-    private AddressDto addressDto;
-    private OrderDto orderDto;
-    private Boolean isActive=true;
+    private String info;
+    private String code;
+    private String phoneNumber;
 }

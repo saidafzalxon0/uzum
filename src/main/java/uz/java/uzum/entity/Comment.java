@@ -33,6 +33,5 @@ public class Comment {
     private Product product;
     @OneToMany
     @JoinColumn(name = "parent_comment_id")
-    private List<Category> parentComment;
-
+    private List<Comment> parentComment;
 }

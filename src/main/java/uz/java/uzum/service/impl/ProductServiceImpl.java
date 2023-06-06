@@ -103,6 +103,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ResponseDto<ProductDto> getById(Integer id) {
+        return null;
+    }
+
+//    @Override
     public ResponseDto<Page<ProductDto>> getAllProducts(Integer page, Integer size) {
         Long count = productRepository.count();
 
@@ -125,7 +130,7 @@ public class ProductServiceImpl implements ProductService {
                 .build();
     }
 
-    @Override
+//    @Override
     public ResponseDto<ProductDto> getProductById(Integer id) {
         return productRepository.findById(id)
                 .map(products -> ResponseDto.<ProductDto>builder()

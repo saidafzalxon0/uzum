@@ -4,16 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import uz.java.uzum.entity.Address;
+
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeliveryDto {
+public class CommentDto {
     private Integer id;
-    private UserDto userDto;
-    private AddressDto addressDto;
-    private OrderDto orderDto;
-    private Boolean isActive=true;
+    private String description;
+    private UserDto users;
+    private List<CommentDto> parentComment;
+
 }

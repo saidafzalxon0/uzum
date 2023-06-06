@@ -1,12 +1,14 @@
 package uz.java.uzum.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import uz.java.uzum.controller.ColorController;
 
 import java.util.List;
+
+import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Getter
 @Setter
@@ -14,11 +16,14 @@ import java.util.List;
 @NoArgsConstructor
 public class ProductDto {
     private Long id;
+    @NotBlank(message = EMPTY_STRING)
     private String name;
+    @NotBlank(message = EMPTY_STRING)
     private String description;
-    private Double price;
+    private Integer price;
+    private BrandDto brand;
     private Integer amount;
-    private List<ColorDto> colors;
-//    private CategoryDto categoryDto;
+    private CategoryDto categoryDto;
+    private List<ProductVariantDto> productVariants;
     private Boolean isAvailable;
 }

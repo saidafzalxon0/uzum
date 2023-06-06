@@ -7,6 +7,8 @@ import uz.java.uzum.dto.ResponseDto;
 public interface ProductService {
     ResponseDto<ProductDto> addProduct(ProductDto productDto);
     ResponseDto<ProductDto> updateProduct(ProductDto productDto);
-    ResponseDto<Page<ProductDto>> getAllProducts(Integer page, Integer size);
-    ResponseDto<ProductDto> getProductById(Integer id);
+    ResponseDto<ProductDto> getById(Integer id);
+    //ResponseDto<List<ProductProjection>> getProducts(Integer userId,Integer currentPage, Integer size);
+
+    //ResponseDto<List<ProductProjection>> getViewedProduct(Integer userId);
 }

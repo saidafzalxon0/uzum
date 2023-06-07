@@ -4,14 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImageDto {
+public class ImageQualityDto {
     private Integer id;
-    private List<ImageQualityDto> imageQualitys;
+    private String name;
+    private MultipartFile image;
 }

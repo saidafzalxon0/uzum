@@ -1,4 +1,4 @@
-package uz.java.uzum.projection;
+package uz.java.uzum.projections;
 
 public interface ProductProjection {
     Integer getId();

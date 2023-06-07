@@ -1,7 +1,7 @@
 package uz.java.uzum.service;
 
 import uz.java.uzum.dto.ResponseDto;
-import uz.java.uzum.projection.ProductProjection;
+import uz.java.uzum.projections.ProductProjection;
 
 import java.util.List;
 

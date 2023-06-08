@@ -12,6 +12,7 @@ import uz.java.uzum.entity.Product;
 import uz.java.uzum.entity.ProductGetHistory;
 import uz.java.uzum.repository.ProductGetRepository;
 import uz.java.uzum.repository.ProductRepository;
+import uz.java.uzum.repository.ProductRepositoryImpl;
 import uz.java.uzum.service.ProductService;
 import uz.java.uzum.service.mapper.ProductMapper;
 
@@ -24,7 +25,7 @@ import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
-    private final ProductRepository productRepository;
+    private final ProductRepositoryImpl productRepository;
     private final ProductMapper productMapper;
     private final ProductGetHistory productGetHistory;
     private final ProductGetRepository productGetRepository;
@@ -107,6 +108,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ResponseDto<ProductDto> getById(Integer id) {
+        return null;
+    }
+
+//    @Override
     public ResponseDto<Page<ProductDto>> getAllProducts(Integer page, Integer size) {
         Long count = productRepository.count();
 
@@ -129,7 +135,7 @@ public class ProductServiceImpl implements ProductService {
                 .build();
     }
 
-    @Override
+//    @Override
     public ResponseDto<ProductDto> getProductById(Integer id) {
         return productRepository.findById(id)
                 .map(products -> ResponseDto.<ProductDto>builder()

@@ -1,9 +1,13 @@
 package uz.java.uzum.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "variant_value")
+@Getter
+@Setter
 public class VariantValue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

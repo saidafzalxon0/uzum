@@ -4,16 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import uz.java.uzum.entity.Address;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeliveryDto {
+public class ImageQualityDto {
     private Integer id;
-    private UserDto userDto;
-    private AddressDto addressDto;
-    private OrderDto orderDto;
-    private Boolean isActive=true;
+    private String name;
+    private MultipartFile image;
 }

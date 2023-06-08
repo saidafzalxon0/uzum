@@ -10,6 +10,7 @@ import uz.java.uzum.dto.ProductDto;
 import uz.java.uzum.dto.ResponseDto;
 import uz.java.uzum.entity.Product;
 import uz.java.uzum.repository.ProductRepository;
+import uz.java.uzum.repository.ProductRepositoryImpl;
 import uz.java.uzum.service.ProductService;
 import uz.java.uzum.service.mapper.ProductMapper;
 
@@ -22,7 +23,7 @@ import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
-    private final ProductRepository productRepository;
+    private final ProductRepositoryImpl productRepository;
     private final ProductMapper productMapper;
     @Override
     public ResponseDto<ProductDto> addProduct(ProductDto productDto) {

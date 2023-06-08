@@ -10,18 +10,19 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import uz.java.uzum.entity.Category;
 import uz.java.uzum.entity.Product;
 
 import java.util.List;
+import java.util.Optional;
 
-
-
-@Component
+@Repository
 @RequiredArgsConstructor
 @Slf4j
-public class ProductRepositoryImpl implements ProductRepository {
+public class ProductRepositoryImpl implements ProductRepository, JpaRepository<Product, Integer> {
     private final EntityManager entityManager;
 
     @Override
@@ -145,6 +146,11 @@ public class ProductRepositoryImpl implements ProductRepository {
             log.error("error during insert viewed_product table {}",e.getMessage());
             return false;
         }
+    }
+
+    @Override
+    public Optional<Product> findById(Integer productId) {
+        return Optional.empty();
     }
 
     private List<Integer> getCategoriesWithChildren(Integer categoryId) {

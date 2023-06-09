@@ -28,7 +28,7 @@ import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Service
 @RequiredArgsConstructor
-public class ImageServiceImpl implements ImageService {
+public class  ImageServiceImpl implements ImageService {
     private final ImageQualityRepository imageQualityRepository;
     private final ImageRepository imageRepository;
     @Override

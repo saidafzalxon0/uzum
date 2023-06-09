@@ -22,7 +22,7 @@ import static uz.java.uzum.service.appStatus.AppStatusMessages.*;
 
 @Service
 @RequiredArgsConstructor
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService{
     private final ProductRepositoryImpl productRepository;
     private final ProductMapper productMapper;
     @Override

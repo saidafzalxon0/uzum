@@ -12,6 +12,7 @@ import uz.java.uzum.service.UserService;
 import uz.java.uzum.service.mapper.UsersMapper;
 
 import java.util.Optional;
+import java.util.SortedSet;
 
 @Service
 @RequiredArgsConstructor
@@ -52,6 +53,8 @@ public class UserServiceImpl implements UserService {
                     .data(usersDto)
                     .build();
         }
+
+        SortedSet
 
         User user = userOptional.get();
         if (usersDto.getGender() != null) {
